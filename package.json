@@ -1,0 +1,36 @@
+{
+  "name": "u.route.js",
+  "version": "0.1.0",
+  "description": "simple routing for the browser",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iamso/u.route.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iamso/u.route.js/issues"
+  },
+  "author": {
+    "name": "Steve Ottoz",
+    "email": "so@dev.so"
+  },
+  "main": "dist/u.route.min.js",
+  "keywords": [
+    "u.js",
+    "route",
+    "routing"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-notify": "^0.4.1",
+    "grunt-update-json": "^0.2.1",
+    "load-grunt-config": "^0.16.0",
+    "time-grunt": "^1.0.0"
+  }
+}

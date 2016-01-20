@@ -1,0 +1,37 @@
+{
+  "name": "u.route.js",
+  "version": "0.1.0",
+  "description": "simple routing for the browser",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iamso/u.route.js.git"
+  },
+  "authors": [
+    "Steve Ottoz <so@dev.so>"
+  ],
+  "main": "dist/u.route.min.js",
+  "license": "MIT",
+  "homepage": "https://github.com/iamso/u.route.js.git",
+  "ignore": [
+    ".bower.json",
+    ".editorconfig",
+    ".git",
+    ".gitattributes",
+    ".gitignore",
+    "demo",
+    "doc",
+    "extensions",
+    "grunt",
+    "Gruntfile.js",
+    "node_modules",
+    "src"
+  ],
+  "keywords": [
+    "u.js",
+    "route",
+    "routing"
+  ],
+  "dependencies": {
+    "u.js": "^0.21.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "default": [
+    "watch"
+  ],
+  "src": [
+    "jshint",
+    "notify:src"
+  ],
+  "dist": [
+    "clean",
+    "concat",
+    "jshint",
+    "uglify",
+    "update_json",
+    "notify:dist"
+  ]
+}

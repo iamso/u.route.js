@@ -1,0 +1,17 @@
+{
+  "name": "u.route.js",
+  "repository": "iamso/u.route.js",
+  "description": "simple routing for the browser",
+  "version": "0.1.0",
+  "keywords": [
+    "u.js",
+    "route",
+    "routing"
+  ],
+  "scripts": [
+    "dist/u.route.js",
+    "dist/u.route.min.js",
+    "dist/u.route.min.js.map"
+  ],
+  "license": "MIT"
+}
