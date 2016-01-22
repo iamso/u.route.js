@@ -32,6 +32,6 @@
     "routing"
   ],
   "dependencies": {
-    "u.js": "^0.21.0"
+    "u.js": "0.*"
   }
 }
