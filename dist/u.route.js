@@ -1,8 +1,8 @@
 /*!
- * u.route.js - Version 0.1.0
+ * u.route.js - Version 0.1.1
  * simple routing for the browser
  * Author: Steve Ottoz <so@dev.so>
- * Build date: 2016-01-20
+ * Build date: 2016-01-22
  * Copyright (c) 2016 Steve Ottoz
  * Released under the MIT license
  */

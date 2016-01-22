@@ -2,7 +2,7 @@
   "name": "u.route.js",
   "repository": "iamso/u.route.js",
   "description": "simple routing for the browser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "u.js",
     "route",
