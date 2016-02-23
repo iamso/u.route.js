@@ -67,7 +67,8 @@
         pass = tmp === false ? tmp : pass;
       });
       if (pass) {
-        u.route.default && u.route.default();
+        req = u.extend(req, {route: null});
+        u.route.default && u.route.default.apply(window, [req]);
       }
     }
     currentPath = pathname;
