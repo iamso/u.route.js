@@ -1,8 +1,8 @@
 /*!
- * u.route.js - Version 0.1.1
+ * u.route.js - Version 0.1.2
  * simple routing for the browser
  * Author: Steve Ottoz <so@dev.so>
- * Build date: 2016-01-22
+ * Build date: 2016-02-24
  * Copyright (c) 2016 Steve Ottoz
  * Released under the MIT license
  */
@@ -96,7 +96,8 @@
         pass = tmp === false ? tmp : pass;
       });
       if (pass) {
-        u.route.default && u.route.default();
+        req = u.extend(req, {route: null});
+        u.route.default && u.route.default.apply(window, [req]);
       }
     }
     currentPath = pathname;
