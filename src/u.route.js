@@ -127,4 +127,4 @@
     return params;
   }
 
-})(u, window, window.history);
+})(ujs, window, window.history);
