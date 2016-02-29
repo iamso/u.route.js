@@ -1,8 +1,8 @@
 /*!
- * u.route.js - Version 0.1.3
+ * u.route.js - Version 0.1.4
  * simple routing for the browser
  * Author: Steve Ottoz <so@dev.so>
- * Build date: 2016-02-25
+ * Build date: 2016-02-29
  * Copyright (c) 2016 Steve Ottoz
  * Released under the MIT license
  */
@@ -56,7 +56,7 @@
   };
 
   u.route.reload = function(state) {
-    var pathname = state && state.url ? state.url : window.location.pathname;
+    var pathname = (state && state.url ? state.url : window.location.pathname).split('?')[0];
     var route;
     var matches;
     var pass = true;
