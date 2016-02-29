@@ -27,7 +27,7 @@
   };
 
   u.route.reload = function(state) {
-    var pathname = state && state.url ? state.url : window.location.pathname;
+    var pathname = (state && state.url ? state.url : window.location.pathname).split('?')[0];
     var route;
     var matches;
     var pass = true;
