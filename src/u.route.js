@@ -1,6 +1,7 @@
 ;(function(u, window, history, undefined){
   'use strict';
 
+  var support = history && history.pushState;
   var routes = [];
   var functions = [];
   var currentPath = '';
@@ -23,7 +24,9 @@
   };
 
   u.route.redirect = function(path, replace) {
-    (replace ? history.replaceState : history.pushState)({url: path, date: new Date()}, null, path);
+    support ?
+      (replace ? history.replaceState : history.pushState)({url: path, date: new Date()}, null, path) :
+      window.location.href = path;
   };
 
   u.route.reload = function(state) {
@@ -76,7 +79,7 @@
   };
 
   u.route.init = function() {
-    history.onpushstate = u.route.reload;
+    support && (history.onpushstate = u.route.reload);
     u(window).on('popstate', function(e){
       if (currentPath === e.target.location.pathname && currentPath !== e.target.location.hash) {
         e.preventDefault();

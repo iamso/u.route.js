@@ -1,6 +1,9 @@
 
 ;(function(history){
   'use strict';
+  if (!history && !history.pushState) {
+    return false;
+  }
   var pushState = history.pushState;
   var replaceState = history.replaceState;
   history.pushState = function(state) {
