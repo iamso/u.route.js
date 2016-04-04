@@ -6,6 +6,8 @@
   var functions = [];
   var currentPath = '';
   var currentHash = '';
+  var useHash = false;
+  var hashPrefix = '#!';
 
   u.route = function(path, mw, fn) {
     var data = {};
@@ -24,13 +26,15 @@
   };
 
   u.route.redirect = function(path, replace) {
-    support ?
-      (replace ? history.replaceState : history.pushState)({url: path, date: new Date()}, null, path) :
-      window.location.href = path;
+    useHash ?
+      window.location.hash = hashPrefix + path :
+      support ?
+        (replace ? history.replaceState : history.pushState)({url: path, date: new Date()}, null, path) :
+        window.location.href = path;
   };
 
   u.route.reload = function(state) {
-    var pathname = (state && state.url ? state.url : window.location.pathname).split('?')[0];
+    var pathname = useHash ? location.hash.replace(hashPrefix, '') : (state && state.url ? state.url : window.location.pathname).split('?')[0];
     var route;
     var matches;
     var pass = true;
@@ -78,10 +82,12 @@
     currentHash = location.hash;
   };
 
-  u.route.init = function() {
-    support && (history.onpushstate = u.route.reload);
+  u.route.init = function(hash, prefix) {
+    useHash = hash;
+    hashPrefix = prefix || hashPrefix;
+    (!useHash && support) && (history.onpushstate = u.route.reload);
     u(window).on('popstate', function(e){
-      if (currentPath === e.target.location.pathname && currentPath !== e.target.location.hash) {
+      if (!useHash && currentPath === e.target.location.pathname && currentPath !== e.target.location.hash) {
         e.preventDefault();
         return false;
       }
