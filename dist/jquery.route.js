@@ -10,13 +10,13 @@
   'use strict';
 
   if (/^f/.test(typeof define) && define.amd) {
-    define(['ujs'], factory);
+    define(['jquery'], factory);
   }
   else if (/^o/.test(typeof exports)) {
-    factory(require('ujs'));
+    factory(require('jquery'));
   }
   else {
-    factory(ujs);
+    factory(jQuery);
   }
 })(function ($) {
 

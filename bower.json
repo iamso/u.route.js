@@ -1,6 +1,6 @@
 {
   "name": "u.route.js",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "simple routing for the browser",
   "repository": {
     "type": "git",
@@ -28,10 +28,12 @@
   ],
   "keywords": [
     "u.js",
+    "jquery",
     "route",
     "routing"
   ],
   "dependencies": {
-    "u.js": "0.*"
+    "u.js": "0.*",
+    "jquery": "*"
   }
 }

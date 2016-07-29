@@ -2,16 +2,20 @@
   "name": "u.route.js",
   "repository": "iamso/u.route.js",
   "description": "simple routing for the browser",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "keywords": [
     "u.js",
+    "jquery",
     "route",
     "routing"
   ],
   "scripts": [
     "dist/u.route.js",
     "dist/u.route.min.js",
-    "dist/u.route.min.js.map"
+    "dist/u.route.min.js.map",
+    "dist/jquery.route.js",
+    "dist/jquery.route.min.js",
+    "dist/jquery.route.min.js.map"
   ],
   "license": "MIT"
 }
