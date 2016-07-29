@@ -9,11 +9,18 @@ module.exports = {
     preserveComments: false,
     sourceMap: true
   },
-  dist: {
+  ujs: {
     options: {
       banner: '<%= banner %>'
     },
     src: ['dist/u.route.js'],
     dest: 'dist/u.route.min.js'
+  },
+  jquery: {
+    options: {
+      banner: '<%= banner %>'
+    },
+    src: ['dist/jquery.route.js'],
+    dest: 'dist/jquery.route.min.js'
   }
 };

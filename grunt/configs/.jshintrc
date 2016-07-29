@@ -23,6 +23,7 @@
   "-W058"    : true,
   "boss"     : true,
   "globals"   : {
-    "µ"      : true
+    "u"      : true,
+    "$"      : true
   }
 }

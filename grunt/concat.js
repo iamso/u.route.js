@@ -7,11 +7,22 @@ module.exports = {
     },
     banner: '<%= banner %>',
   },
-  dist: {
+  ujs: {
     src: [
-      'src/history.fix.js',
-      'src/u.route.js'
+      'src/umd/ujs.js',
+      'src/history.js',
+      'src/plugin.js',
+      'src/umd/end.js',
     ],
     dest: 'dist/u.route.js'
+  },
+  jquery: {
+    src: [
+      'src/umd/jquery.js',
+      'src/history.js',
+      'src/plugin.js',
+      'src/umd/end.js',
+    ],
+    dest: 'dist/jquery.route.js'
   }
 };
