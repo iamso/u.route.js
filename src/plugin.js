@@ -84,8 +84,7 @@
   $.route.init = function(hash, prefix) {
     useHash = hash;
     hashPrefix = prefix || hashPrefix;
-    (!useHash && support) && (history.onpushstate = $.route.reload);
-    $(window).on('popstate', function(e){
+    $(window).on('popstate pushstate replacestate', function(e){
       if (!useHash && currentPath === e.target.location.pathname && currentPath !== e.target.location.hash) {
         e.preventDefault();
         return false;
