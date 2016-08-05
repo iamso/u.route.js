@@ -1,8 +1,8 @@
 /*!
- * u.route.js - Version 0.3.0
+ * u.route.js - Version 0.4.0
  * simple routing for the browser
  * Author: Steve Ottoz <so@dev.so>
- * Build date: 2016-07-29
+ * Build date: 2016-08-05
  * Copyright (c) 2016 Steve Ottoz
  * Released under the MIT license
  */
@@ -29,20 +29,26 @@
     }
     var pushState = history.pushState;
     var replaceState = history.replaceState;
+
     history.pushState = function(state) {
       var returnValue = pushState.apply(history, arguments);
-      if (/^f/.test(typeof history.onpushstate)) {
-          history.onpushstate(state);
-      }
+      triggerEvent('push', state);
       return returnValue;
     };
     history.replaceState = function(state) {
       var returnValue = replaceState.apply(history, arguments);
-      if (/^f/.test(typeof history.onpushstate)) {
-          history.onpushstate(state);
-      }
+      triggerEvent('replace', state);
       return returnValue;
     };
+
+    function triggerEvent(type, state) {
+      var event = new CustomEvent(type + 'state', {
+        detail: state,
+        bubbles: true,
+        cancelable: true
+      });
+      window.dispatchEvent(event);
+    }
   })(window.history);
 
 
@@ -132,8 +138,7 @@
   $.route.init = function(hash, prefix) {
     useHash = hash;
     hashPrefix = prefix || hashPrefix;
-    (!useHash && support) && (history.onpushstate = $.route.reload);
-    $(window).on('popstate', function(e){
+    $(window).on('popstate pushstate replacestate', function(e){
       if (!useHash && currentPath === e.target.location.pathname && currentPath !== e.target.location.hash) {
         e.preventDefault();
         return false;
