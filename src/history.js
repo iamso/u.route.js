@@ -7,13 +7,15 @@
     var pushState = history.pushState;
     var replaceState = history.replaceState;
 
-    history.pushState = function(state) {
+    history.pushState = function(state, title) {
       var returnValue = pushState.apply(history, arguments);
+      title && (document.title = title);
       triggerEvent('push', state);
       return returnValue;
     };
-    history.replaceState = function(state) {
+    history.replaceState = function(state, title) {
       var returnValue = replaceState.apply(history, arguments);
+      title && (document.title = title);
       triggerEvent('replace', state);
       return returnValue;
     };
