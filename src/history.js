@@ -19,11 +19,8 @@
     };
 
     function triggerEvent(type, state) {
-      var event = new CustomEvent(type + 'state', {
-        detail: state,
-        bubbles: true,
-        cancelable: true
-      });
+      var event = document.createEvent('CustomEvent');
+      event.initCustomEvent(type + 'state', true, true, state);
       window.dispatchEvent(event);
     }
   })(window.history);
