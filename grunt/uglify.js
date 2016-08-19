@@ -22,5 +22,13 @@ module.exports = {
     },
     src: ['dist/jquery.route.js'],
     dest: 'dist/jquery.route.min.js'
+  },
+  history: {
+    options: {
+      banner: '<%= historyBanner %>',
+      sourceMap: false
+    },
+    src: ['dist/history.fix.js'],
+    dest: 'dist/history.fix.min.js'
   }
 };

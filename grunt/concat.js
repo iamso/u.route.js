@@ -24,5 +24,14 @@ module.exports = {
       'src/umd/end.js',
     ],
     dest: 'dist/jquery.route.js'
+  },
+  history: {
+    options: {
+      banner: '<%= historyBanner %>',
+    },
+    src: [
+      'src/history.js',
+    ],
+    dest: 'dist/history.fix.js'
   }
 };

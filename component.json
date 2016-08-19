@@ -15,7 +15,9 @@
     "dist/u.route.min.js.map",
     "dist/jquery.route.js",
     "dist/jquery.route.min.js",
-    "dist/jquery.route.min.js.map"
+    "dist/jquery.route.min.js.map",
+    "dist/history.fix.js",
+    "dist/history.fix.min.js"
   ],
   "license": "MIT"
 }

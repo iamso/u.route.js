@@ -13,7 +13,14 @@ module.exports = function(grunt) {
               ' * Build date: <%= grunt.template.today("yyyy-mm-dd") %>\n' +
               ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= package.author.name %>\n' +
               ' * Released under the <%= package.license %> license\n' +
-              ' */'
-    }
+              ' */',
+      historyBanner:  '/*!\n' +
+                      ' * history API fix\n' +
+                      ' * Author: <%= package.author.name %> <<%= package.author.email %>>\n' +
+                      ' * Build date: <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+                      ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= package.author.name %>\n' +
+                      ' * Released under the <%= package.license %> license\n' +
+                      ' */'
+            }
   });
 };
