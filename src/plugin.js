@@ -85,7 +85,7 @@
     useHash = hash;
     hashPrefix = prefix || hashPrefix;
     $(window).on('popstate pushstate replacestate', function(e){
-      if (!useHash && currentPath === e.target.location.pathname && currentPath !== e.target.location.hash) {
+      if (!useHash && currentPath === e.target.location.pathname && currentPath !== e.target.location.hash && e.target.location.hash) {
         e.preventDefault();
         return false;
       }
