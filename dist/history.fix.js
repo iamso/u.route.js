@@ -1,7 +1,7 @@
 /*!
  * history API fix
  * Author: Steve Ottoz <so@dev.so>
- * Build date: 2016-08-19
+ * Build date: 2016-10-19
  * Copyright (c) 2016 Steve Ottoz
  * Released under the MIT license
  */

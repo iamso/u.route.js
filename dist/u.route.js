@@ -1,8 +1,8 @@
 /*!
- * u.route.js - Version 0.6.0
+ * u.route.js - Version 0.6.1
  * simple routing for the browser
  * Author: Steve Ottoz <so@dev.so>
- * Build date: 2016-08-19
+ * Build date: 2016-10-19
  * Copyright (c) 2016 Steve Ottoz
  * Released under the MIT license
  */
@@ -138,7 +138,7 @@
     useHash = hash;
     hashPrefix = prefix || hashPrefix;
     $(window).on('popstate pushstate replacestate', function(e){
-      if (!useHash && currentPath === e.target.location.pathname && currentPath !== e.target.location.hash) {
+      if (!useHash && currentPath === e.target.location.pathname && currentPath !== e.target.location.hash && e.target.location.hash) {
         e.preventDefault();
         return false;
       }

@@ -1,6 +1,6 @@
 {
   "name": "u.route.js",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "simple routing for the browser",
   "repository": {
     "type": "git",
